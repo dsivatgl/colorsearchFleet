@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
+API used for colors-https://api.color.pizza/v1/names/lemon
+in the above url replace lemon is the search string
+
 Clone the repo and change directory and run npm install in the project directory
 
 ## Development server
