@@ -1,0 +1,68 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+ Sivananth Color Picker Coding challenge for Fleet Studio Technologies
+
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-header>Color Picker</nb-card-header>
+      <nb-card-body class="example-items-rows">
+     
+        <form [formGroup]="ColorInput" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <label class="col-md-6">
+              Color Name
+             
+            </label>
+            <input nbInput formControlName="Colorname" shape="round" placeholder="Color Name">
+          </div>
+          
+        
+          <button nbButton status="danger" type="submit">Submit</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+    
+
+    <nb-card size="medium">
+      <nb-card-header>
+       Name and HEx values
+      </nb-card-header>
+      <nb-list>
+      
+        <nb-list-item *ngFor="let resultData of ResultData " >
+        <div class="row wfull"  [ngStyle]="{'background-color': resultData.hex}">
+          <label class="col-md-6">{{ resultData.name}}</label> 
+          <label class="col-md-6">  {{ resultData.hex}}</label>
+        </div> 
+        </nb-list-item>
+      
+     
+      </nb-list>
+    </nb-card>
+    
+    <!-- <table >
+      <thead>
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">HEX</th>
+           
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let resultData of ResultData ">
+          <th scope="row">{{ resultData.name}}</th>
+          <td  [ngStyle]="{'background-color': resultData.hex}">{{ resultData.hex}}</td>
+         
+        </tr>
+      </tbody>
+    </table> -->
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
